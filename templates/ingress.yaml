@@ -3,8 +3,6 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: {{ .Values.nexus.ingress.name }}
-  namespace: {{ .Values.namespace }}
-
 spec:
   rules:
   - host: {{ .Values.nexus.ingress.hosts.host }}

@@ -5,7 +5,18 @@ image:
   repository: sonatype/nexus3
   tag: latest
   # Overrides the image tag whose default   ta
-
+ ingress:
+    enabled: true
+    name: nexus-ingress
+    hosts:
+        host: "nexus.10.242.1.80.nip.io"
+        paths:
+        - path: /
+          pathType: Prefix
+          service:
+            name: nexus
+            port: 8081
+            
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
